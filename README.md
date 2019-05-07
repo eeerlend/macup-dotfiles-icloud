@@ -13,7 +13,7 @@ npm install eeerlend/macup-dotfiles-icloud --save
 Add your dotfiles to your macup configuration file like this...
 
 ```bash
-macup-dotfiles-icloud+=(
+macup_dotfiles_icloud+=(
   myfile
   myotherfile:644
   .ssh/config:644
