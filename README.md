@@ -2,6 +2,13 @@
 
 A [macup](https://github.com/eeerlend/macup) module that keeps your dotfiles in sync through icloud drive
 
+## Installation
+Run the following command to add it to your repo
+
+```bash
+npm install eeerlend/macup-dotfiles-icloud --save
+```
+
 ## Configuration
 Add your dotfiles to your macup configuration file like this...
 
