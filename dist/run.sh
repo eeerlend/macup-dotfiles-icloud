@@ -2,7 +2,21 @@
 
 #### Package: macup/macup-dotfiles-icloud
 #### Description: macup module that keeps your dotfiles in sync through icloud drive
-function symlink_dotfile {
+function copy_to_icloud {
+  local file=$1
+  local path_to_dotfiles="$HOME"/Library/Mobile\ Documents/com~apple~CloudDocs/.dotfiles
+  local path_to_file
+  path_to_file=$(dirname $file)
+
+  if [ -f "$HOME/$file" ]; then
+    report_from_package "Copying local file to iCloud, since it doesn't exist in iCloud yet"
+    cp "$HOME/$file" "$path_to_dotfiles/$file"
+  else
+    report_from_package "The file $file needs to be added to iCloud!" "yellow"
+  fi
+}
+
+function hardlink_dotfile {
   local file=$1
   local chmod=$2
   local num_links=0
@@ -86,5 +100,9 @@ for ((i=0; i<${#macup_dotfiles_icloud[@]}; ++i)); do
   file="$(echo "${macup_dotfiles_icloud[i]}" | cut -d':' -f1)"
   chmod="$(echo "${macup_dotfiles_icloud[i]}" | cut -d':' -f2)"
 
-  symlink_dotfile "$file" "$chmod"
+  if [ ! -f "$HOME"/Library/Mobile\ Documents/com~apple~CloudDocs/.dotfiles/"$file" ]; then
+    copy_to_icloud "$file"
+  fi
+  
+  hardlink_dotfile "$file" "$chmod"
 done
