@@ -3,7 +3,7 @@
 A [macup](https://github.com/eeerlend/macup) module that keeps your dotfiles in sync through icloud drive
 
 ## Configuration
-Add your dotfiles to your macup configuration file, and this module will make sure to keep them in sync
+Add your dotfiles to your macup configuration file like this...
 
 ```bash
 macup-dotfiles-icloud+=(
@@ -13,3 +13,5 @@ macup-dotfiles-icloud+=(
   .ssh/my_private_key:600
 )
 ```
+
+... following the `filename:chmod` pattern. All filenames should be relative to your HOME directory, `$HOME/`
