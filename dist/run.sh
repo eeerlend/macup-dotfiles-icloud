@@ -29,7 +29,8 @@ function symlink_dotfile {
   # If the file doesn't exist as hard link in your system, we'll create a hard link to icloud
   if [ "$num_links" != "2" ]; then
 
-    report_from_package "\~/$file doesn't exist as hard link locally. Will create a hard link to iCloud"
+    # shellcheck disable=SC2088
+    report_from_package "~/$file doesn't exist as hard link locally. Will create a hard link to iCloud"
 
     if [ -f "$HOME"/"$file" ]; then
       report_from_package "Removing static file $file"
@@ -47,7 +48,8 @@ function symlink_dotfile {
       unlink "$HOME"/"$file"
     fi
 
-    report_from_package "\~/$file is already hard linked to iCloud"
+    # shellcheck disable=SC2088
+    report_from_package "~/$file is already hard linked to iCloud"
   fi
   
   if [ -n "$chmod" ] && [ "$chmod" -eq "$chmod" ] 2>/dev/null; then
