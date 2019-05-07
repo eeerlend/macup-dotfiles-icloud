@@ -3,7 +3,7 @@
 A [macup](https://github.com/eeerlend/macup) module that keeps your dotfiles in sync through icloud drive
 
 ## Configuration
-Add your dotfiles to your configuration, and this module will make sure to keep them in sync
+Add your dotfiles to your macup configuration file, and this module will make sure to keep them in sync
 
 ```bash
 macup-dotfiles-icloud+=(
