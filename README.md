@@ -1,6 +1,6 @@
 # macup-dotfiles-icloud
 
-A [macup](https://github.com/eeerlend/macup) module that keeps your dotfiles in sync through icloud drive
+A [macup](https://github.com/eeerlend/macup-builder) module that keeps your dotfiles in sync through icloud drive
 
 ## Installation
 Run the following command to add it to your repo
