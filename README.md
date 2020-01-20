@@ -6,11 +6,11 @@ A [macup](https://github.com/eeerlend/macup-builder) module that keeps your dotf
 Run the following command to add it to your repo
 
 ```bash
-npm install eeerlend/macup-dotfiles-icloud --save
+npm install eeerlend/macup-dotfiles-icloud
 ```
 
 ## Configuration
-Add your dotfiles to your macup configuration file like this...
+Dotfiles are added in the main config file (e.g. my.config)
 
 ```bash
 macup_dotfiles_icloud+=(
@@ -21,4 +21,4 @@ macup_dotfiles_icloud+=(
 )
 ```
 
-... following the `filename:chmod` pattern. All filenames should be relative to your HOME directory, `$HOME/`
+The list follows the `filename:chmod` pattern. All filenames should be relative to your HOME directory, `$HOME/`
