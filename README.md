@@ -1,5 +1,7 @@
 # macup-dotfiles-icloud
 
+NOTE! This package is replaced with [macup-dotfiles-cloud](https://github.com/eeerlend/macup-dotfiles-cloud), to support more cloud methods
+
 A [macup](https://github.com/eeerlend/macup-builder) module that keeps your dotfiles in sync through icloud drive
 
 ## Installation
